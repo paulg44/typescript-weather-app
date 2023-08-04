@@ -1,36 +1,34 @@
-import React from "react";
-import { useState } from "react";
-import words from "./HangmanTestProject/wordList.json";
-import HangmanDrawing from "./HangmanTestProject/HangmanDrawing";
-import HangmanWord from "./HangmanTestProject/HangmanWord";
-import Keyboard from "./HangmanTestProject/Keyboard";
+import React, { useState, useEffect, ChangeEvent } from "react";
+import SearchBar from "./SearchBar/SearchBar";
+import CityCard from "./CityCard/CityCard";
 
 function App() {
-  const [wordToGuess, setWordToGuess] = useState(() => {
-    return words[Math.floor(Math.random() * words.length)];
-  });
-  const [guessedLetters, setGuessedLetters] = useState<string[]>([]);
+  // Use States
+  const [search, setSearch] = useState("");
 
-  const inCorrectLetters = guessedLetters.filter(
-    (letter) => !wordToGuess.includes(letter)
-  );
+  // API for weather
+  useEffect(() => {
+    async function weatherAPI() {
+      const response = await fetch(
+        "http://api.weatherapi.com/v1/current.json?key=7c5aa96ac3444385920101530232207&q=derby"
+      );
+      const data = await response.json();
+      console.log(data);
+    }
+    weatherAPI();
+  }, []);
+
+  // Function for input change
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    e.preventDefault();
+    setSearch(e.target.value);
+    console.log(search);
+  };
 
   return (
-    <div
-      style={{
-        maxWidth: "800px",
-        display: "flex",
-        flexDirection: "column",
-        gap: "2rem",
-        margin: "0 auto",
-        alignItems: "center",
-      }}
-    >
-      <div style={{ fontSize: "2rem", textAlign: "center" }}>Lose Win</div>
-      <HangmanDrawing numberOfGuesses={inCorrectLetters.length} />
-      <HangmanWord guessedLetters={guessedLetters} wordToGuess={wordToGuess} />
-      <div style={{ alignSelf: "stretch" }} />
-      <Keyboard />
+    <div className="App">
+      <SearchBar handleInputChange={handleInputChange} />
+      <CityCard />
     </div>
   );
 }

@@ -93,7 +93,7 @@ type HangmanDrawingProps = {
 function HangmanDrawing({ numberOfGuesses }: HangmanDrawingProps) {
   return (
     <div style={{ position: "relative" }}>
-      {(BODY_PARTS.slice(0), numberOfGuesses)}
+      {BODY_PARTS.slice(0, numberOfGuesses)}
       <div
         style={{
           height: "50px",
