@@ -4,14 +4,15 @@ import { ChangeEvent } from "react";
 
 type SearchBarProps = {
   handleInputChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  handleSearchClick: () => void;
 };
 
-function SearchBar({ handleInputChange }: SearchBarProps) {
+function SearchBar({ handleInputChange, handleSearchClick }: SearchBarProps) {
   return (
     <div>
       <label>Enter City</label>
       <input onChange={handleInputChange}></input>
-      <button>Search</button>
+      <button onClick={handleSearchClick}>Search</button>
     </div>
   );
 }

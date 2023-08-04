@@ -10,13 +10,13 @@ function App() {
   useEffect(() => {
     async function weatherAPI() {
       const response = await fetch(
-        "http://api.weatherapi.com/v1/current.json?key=7c5aa96ac3444385920101530232207&q=derby"
+        `http://api.weatherapi.com/v1/current.json?key=7c5aa96ac3444385920101530232207&q=${search}`
       );
       const data = await response.json();
       console.log(data);
     }
     weatherAPI();
-  }, []);
+  }, [search]);
 
   // Function for input change
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -25,9 +25,16 @@ function App() {
     console.log(search);
   };
 
+  const handleSearchClick = () => {
+    console.log("search btn clicked");
+  };
+
   return (
     <div className="App">
-      <SearchBar handleInputChange={handleInputChange} />
+      <SearchBar
+        handleInputChange={handleInputChange}
+        handleSearchClick={handleSearchClick}
+      />
       <CityCard />
     </div>
   );
