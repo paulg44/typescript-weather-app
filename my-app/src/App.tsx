@@ -1,15 +1,18 @@
 import React, { useState, ChangeEvent } from "react";
 import SearchBar from "./SearchBar/SearchBar";
 import CityCard from "./CityCard/CityCard";
+import FavouriteCities from "./FavouriteCities/FavouriteCities";
 
-// Next plan - add information to city card when a city searched and btn clicked. Add states for city info/data etc
+export type CityData = {
+  name: string;
+};
 
 function App() {
   // Use States
   const [search, setSearch] = useState("");
   const [city, setCity] = useState("");
   const [temp, setTemp] = useState(0);
-  const [addFavourite, setAddFavourite] = useState("");
+  const [addFavourite, setAddFavourite] = useState<CityData[]>([]);
 
   // API for weather
 
@@ -24,15 +27,23 @@ function App() {
   }
 
   // Function for input change
-  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+  function handleInputChange(e: ChangeEvent<HTMLInputElement>) {
     e.preventDefault();
     setSearch(e.target.value);
     console.log(search);
-  };
+  }
 
-  const handleSearchClick = () => {
+  // Functtion for search button
+  function handleSearchClick() {
     return weatherAPI();
-  };
+  }
+
+  // Function for add to list button
+  function handleAddToList() {
+    const newFavourite: CityData = { name: city };
+    setAddFavourite([...addFavourite, newFavourite]);
+    console.log("add to list btn clicked");
+  }
 
   return (
     <div className="App">
@@ -40,7 +51,8 @@ function App() {
         handleInputChange={handleInputChange}
         handleSearchClick={handleSearchClick}
       />
-      <CityCard city={city} temp={temp} />
+      <CityCard city={city} temp={temp} handleAddToList={handleAddToList} />
+      <FavouriteCities addFavourite={addFavourite} />
     </div>
   );
 }
