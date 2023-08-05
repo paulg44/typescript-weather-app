@@ -1,10 +1,12 @@
 // Component for searched city result
 
-function CityCard() {
+type CityCardProps = { city: string; temp: number };
+
+function CityCard({ city, temp }: CityCardProps) {
   return (
     <div>
-      <h2>City</h2>
-      <p>Some Info</p>
+      <h2>{city}</h2>
+      <p>{temp}</p>
     </div>
   );
 }
