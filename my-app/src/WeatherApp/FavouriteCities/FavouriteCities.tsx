@@ -1,5 +1,6 @@
 // Component for favourite cities list
-import { CityData } from "../App";
+import { CityData } from "../WeatherAppDisplay";
+import "./FavouriteCities.css";
 
 type FavouriteCitiesProps = {
   addFavourite: CityData[];
@@ -7,7 +8,7 @@ type FavouriteCitiesProps = {
 
 function FavouriteCities({ addFavourite }: FavouriteCitiesProps) {
   return (
-    <div>
+    <div className="favouriteCities">
       <ul>
         {addFavourite.map((city: CityData) => (
           <li key={city.name}>{city.name}</li>
