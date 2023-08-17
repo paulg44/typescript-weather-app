@@ -1,59 +1,16 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Homepage from "./Homepage/Homepage";
 import WeatherAppDisplay from "./WeatherApp/WeatherAppDisplay";
+import HangmanAppDisplay from "./HangmanTestProject/HangmanAppDisplay";
 
 function App() {
-  // // Use States
-  // const [search, setSearch] = useState("");
-  // const [city, setCity] = useState("");
-  // const [temp, setTemp] = useState(0);
-  // const [addFavourite, setAddFavourite] = useState<CityData[]>([]);
-
-  // // API for weather
-
-  // async function weatherAPI() {
-  //   const response = await fetch(
-  //     `http://api.weatherapi.com/v1/current.json?key=7c5aa96ac3444385920101530232207&q=${search}`
-  //   );
-  //   const data = await response.json();
-  //   console.log(data);
-  //   setCity(data.location.name);
-  //   setTemp(data.current.temp_c);
-  // }
-
-  // // Function for input change
-  // function handleInputChange(e: ChangeEvent<HTMLInputElement>) {
-  //   e.preventDefault();
-  //   setSearch(e.target.value);
-  //   console.log(search);
-  // }
-
-  // // Functtion for search button
-  // function handleSearchClick() {
-  //   return weatherAPI();
-  // }
-
-  // // Function for add to list button
-  // function handleAddToList() {
-  //   const newFavourite: CityData = { name: city };
-  //   setAddFavourite([...addFavourite, newFavourite]);
-  //   console.log("add to list btn clicked");
-  // }
-
-  // return (
-  //   <div className="App">
-  //     <SearchBar
-  //       handleInputChange={handleInputChange}
-  //       handleSearchClick={handleSearchClick}
-  //     />
-  //     <CityCard city={city} temp={temp} handleAddToList={handleAddToList} />
-  //     <FavouriteCities addFavourite={addFavourite} />
-  //   </div>
-  // );
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<WeatherAppDisplay />}></Route>
+        <Route path="/" element={<Homepage />}></Route>
+        <Route path="/weather" element={<WeatherAppDisplay />}></Route>
+        <Route path="/hangman" element={<HangmanAppDisplay />}></Route>
       </Routes>
     </BrowserRouter>
   );

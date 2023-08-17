@@ -1,5 +1,3 @@
-import React, { useCallback, useEffect } from "react";
-import { useState } from "react";
 import words from "./HangmanTestProject/wordList.json";
 import HangmanDrawing from "./HangmanTestProject/HangmanDrawing";
 import HangmanWord from "./HangmanTestProject/HangmanWord";
@@ -68,6 +66,7 @@ const key = e.key;
 }, []);
 
 return (
+
 <div
 style={{
         maxWidth: "800px",

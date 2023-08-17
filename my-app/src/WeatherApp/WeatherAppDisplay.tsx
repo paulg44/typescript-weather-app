@@ -1,5 +1,6 @@
 // Weather App display component
 import { useState, ChangeEvent } from "react";
+import { Link } from "react-router-dom";
 import CityCard from "./CityCard/CityCard";
 import SearchBar from "./SearchBar/SearchBar";
 import FavouriteCities from "./FavouriteCities/FavouriteCities";
@@ -47,6 +48,7 @@ function WeatherAppDisplay() {
   }
   return (
     <div className="weatherAppDisplay">
+      <Link to={"/"}>Home</Link>
       <SearchBar
         handleInputChange={handleInputChange}
         handleSearchClick={handleSearchClick}
