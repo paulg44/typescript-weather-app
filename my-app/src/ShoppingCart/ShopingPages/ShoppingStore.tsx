@@ -8,4 +8,6 @@ function ShoppingStore() {
   );
 }
 
+console.log("render");
+
 export default ShoppingStore;

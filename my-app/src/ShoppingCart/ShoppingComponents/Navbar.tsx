@@ -8,13 +8,13 @@ function Navbar() {
     <NavbarBs className="bg-white shadow-sm mb-3">
       <Container>
         <Nav>
-          <Nav.Link to="/shoppinghome" as={NavLink}>
+          <Nav.Link to="/shopping/" as={NavLink}>
             Home
           </Nav.Link>
-          <Nav.Link to="/shoppingstore" as={NavLink}>
+          <Nav.Link to="/shopping/store/" as={NavLink}>
             Store
           </Nav.Link>
-          <Nav.Link to="/shoppingabout" as={NavLink}>
+          <Nav.Link to="/shopping/about/" as={NavLink}>
             About
           </Nav.Link>
         </Nav>
