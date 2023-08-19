@@ -6,18 +6,20 @@ import { Container } from "react-bootstrap";
 import ShoppingHome from "./ShopingPages/ShoppingHome";
 import ShoppingAbout from "./ShopingPages/ShoppingAbout";
 import ShoppingStore from "./ShopingPages/ShoppingStore";
+import Navbar from "./ShoppingComponents/Navbar";
 
 function ShoppingCartDisplay() {
   return (
-    <div>
-      <Container className="mb-4">
+    <>
+      <Navbar />
+      <Container>
         <Routes>
           <Route path="/shoppinghome" element={<ShoppingHome />}></Route>
           <Route path="/shoppingstore" element={<ShoppingStore />}></Route>
           <Route path="/shoppingabout" element={<ShoppingAbout />}></Route>
         </Routes>
       </Container>
-    </div>
+    </>
   );
 }
 
