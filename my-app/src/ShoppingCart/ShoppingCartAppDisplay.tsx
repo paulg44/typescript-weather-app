@@ -5,11 +5,12 @@ import ShoppingHome from "./ShopingPages/ShoppingHome";
 import ShoppingAbout from "./ShopingPages/ShoppingAbout";
 import ShoppingStore from "./ShopingPages/ShoppingStore";
 import Navbar from "./ShoppingComponents/Navbar";
+import { ShoppingCartProvider } from "./ShoppingContext/ShoppingCartContext";
 
 function ShoppingCartDisplay() {
   console.log("ShoppingCartDisplay rendering");
   return (
-    <>
+    <ShoppingCartProvider>
       <Navbar />
       <Container>
         <Routes>
@@ -19,7 +20,7 @@ function ShoppingCartDisplay() {
         </Routes>
         <Link to={"/"}>Homepage</Link>
       </Container>
-    </>
+    </ShoppingCartProvider>
   );
 }
 
