@@ -4,9 +4,14 @@ Revisiting the final hackathon at SoC, a typescript weather app. Typescript is s
 
 I have now made this into multiple projects that I can showcase using React and Typescript
 
+# Todo List
+
+Everyone's favourite....the todo list!!! I will create a fairly simple todo list, it may have a couple of extras I'll see how I get on. However this will be the first typescript project I do from scratch with no help, tutorials, school of code hackathon's etc.
+
 # Original Weather App
 
 I learnt in this project about functions with event handlers have to have types, usually () => void seems to do the trick. Also (although I did not implement this in the end) that you can have a seperate file just for types and then import them as you would a component. I could see this being handy for large scale applications to keep things neat and tidy.
+I have also added my component tree diagram to this projects folder.
 
 # Hangman Youtube tutorial
 
