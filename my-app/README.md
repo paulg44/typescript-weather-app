@@ -7,6 +7,7 @@ I have now made this into multiple projects that I can showcase using React and 
 # Todo List
 
 Everyone's favourite....the todo list!!! I will create a fairly simple todo list, it may have a couple of extras I'll see how I get on. However this will be the first typescript project I do from scratch with no help, tutorials, school of code hackathon's etc.
+I will also use bootstrap on this application as I have it installed and I'd like to give that a good research whilst I'm doing the project.
 
 # Original Weather App
 

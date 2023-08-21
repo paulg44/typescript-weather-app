@@ -5,6 +5,7 @@ import Homepage from "./Homepage/Homepage";
 import WeatherAppDisplay from "./WeatherApp/WeatherAppDisplay";
 import HangmanAppDisplay from "./HangmanTestProject/HangmanAppDisplay";
 import ShoppingCartDisplay from "./ShoppingCart/ShoppingCartAppDisplay";
+import TodoDisplay from "./TodoApp/TodoDisplay";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/weather" element={<WeatherAppDisplay />}></Route>
         <Route path="/hangman" element={<HangmanAppDisplay />}></Route>
         <Route path="/shopping/*" element={<ShoppingCartDisplay />}></Route>
+        <Route path="/todo/" element={<TodoDisplay />}></Route>
       </Routes>
     </>
   );

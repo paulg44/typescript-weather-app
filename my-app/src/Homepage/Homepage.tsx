@@ -7,6 +7,7 @@ function Homepage() {
       <Link to={"/weather"}>Weather App</Link>
       <Link to={"/hangman"}>Hangman</Link>
       <Link to={"/shopping"}>Shopping Cart</Link>
+      <Link to={"/todo"}>Todo List</Link>
     </div>
   );
 }
