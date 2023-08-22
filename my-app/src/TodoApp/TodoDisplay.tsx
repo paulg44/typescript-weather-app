@@ -36,7 +36,7 @@ function TodoDisplay() {
   //   Function to add new todod to list
   function handleAddTodo() {
     const newTodo = { input, date };
-    setAddTodo([...addTodo, newTodo]);
+    setAddTodo([newTodo, ...addTodo]);
     console.log("add todo btn clicked");
   }
   return (
@@ -51,7 +51,7 @@ function TodoDisplay() {
         date={date}
         addTodo={addTodo}
       />
-      <TodoList />
+      <TodoList input={input} date={date} addTodo={addTodo} />
     </Container>
   );
 }
