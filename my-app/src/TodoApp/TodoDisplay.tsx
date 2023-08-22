@@ -1,24 +1,23 @@
 // Component for todo display
 import { Container } from "react-bootstrap";
-import { useState, ChangeEvent, MouseEventHandler } from "react";
+import { useState, ChangeEvent, MouseEvent } from "react";
 import EnterNewTodo from "./EnterNewTodo";
 import TodoList from "./TodoList";
 
 export type EnterNewTodoProps = {
   handleTodoInputChange: (e: ChangeEvent<HTMLInputElement>) => void;
   handleTodoInputDate: (e: ChangeEvent<HTMLInputElement>) => void;
-  handleAddTodo: (e: MouseEventHandler<HTMLButtonElement>) => void;
+  handleAddTodo: (e: MouseEvent<HTMLButtonElement>) => void;
   input: string;
   date: string;
-  addTodo: string;
-  newTodo: string;
+  addTodo: { input: string; date: string }[];
 };
 
 function TodoDisplay() {
   // States
   const [input, setInput] = useState("");
   const [date, setDate] = useState("");
-  const [addTodo, setAddTodo] = useState<EnterNewTodoProps[]>([]);
+  const [addTodo, setAddTodo] = useState<EnterNewTodoProps["addTodo"]>([]);
 
   // Function for todo change
   function handleTodoInputChange(e: ChangeEvent<HTMLInputElement>) {
@@ -48,6 +47,9 @@ function TodoDisplay() {
         handleAddTodo={handleAddTodo}
         handleTodoInputChange={handleTodoInputChange}
         handleTodoInputDate={handleTodoInputDate}
+        input={input}
+        date={date}
+        addTodo={addTodo}
       />
       <TodoList />
     </Container>
