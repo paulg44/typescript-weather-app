@@ -14,7 +14,7 @@ function TodoList({ addTodo }: TodoListProps) {
         <ListGroup.Item
           className="d-flex justify-content-between"
           style={{ width: "400px" }}
-          key={`${todo.input} due ${todo.date}`}
+          key={`${todo.input} ${todo.date}`}
         >
           {todo.input}
           <span className="text-muted">due {todo.date}</span>

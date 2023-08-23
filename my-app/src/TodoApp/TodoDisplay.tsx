@@ -37,9 +37,10 @@ function TodoDisplay() {
   function handleAddTodo() {
     const newTodo = { input, date };
     setAddTodo([newTodo, ...addTodo]);
-    console.log("add todo btn clicked");
-    // Write code to remove inputs
+    setInput("");
+    setDate("");
   }
+
   return (
     <Container className="d-flex flex-column align-items-center">
       {/* Make Paul's dynamic? */}

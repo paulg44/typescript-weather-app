@@ -7,6 +7,8 @@ function EnterNewTodo({
   handleAddTodo,
   handleTodoInputDate,
   handleTodoInputChange,
+  input,
+  date,
 }: EnterNewTodoProps) {
   return (
     <Container className=" d-flex align-items-center justify-content-center">
@@ -14,13 +16,17 @@ function EnterNewTodo({
       <Form.Control
         className="m-3"
         style={{ width: "400px" }}
+        value={input}
         onChange={handleTodoInputChange}
+        placeholder="Enter todo..."
       ></Form.Control>
       <Form.Label>Due By</Form.Label>
       <Form.Control
         className="m-3"
         style={{ width: "200px" }}
+        value={date}
         onChange={handleTodoInputDate}
+        placeholder="Enter Date..."
       ></Form.Control>
 
       <Button
