@@ -1,0 +1,39 @@
+/* Custom CSS for Homepage */
+
+.customCard {
+  text-align: center;
+  padding: 20px;
+  width: 200px;
+  height: 300px;
+  box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.link {
+  color: #000;
+  text-decoration: none;
+  animation: bounce 1s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  70% {
+    transform: translateY(0%);
+  }
+  80% {
+    transform: translateY(-15%);
+  }
+  90% {
+    transform: translateY(0%);
+  }
+  95% {
+    transform: translateY(-7%);
+  }
+  97% {
+    transform: translateY(0%);
+  }
+  99% {
+    transform: translateY(-3%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
