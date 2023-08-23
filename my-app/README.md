@@ -2,7 +2,8 @@
 
 Revisiting the final hackathon at SoC, a typescript weather app. Typescript is something I need to practice and I remember at the time not fully understanding what was happening, hence me having another shot at it now.
 
-I have now made this into multiple projects that I can showcase using React and Typescript
+I have now made this into multiple projects that I can showcase using React and Typescript. 
+As I have not yet styled any pages or projects I am going to use bootstrap throughout to learn more about this technology
 
 # Todo List
 

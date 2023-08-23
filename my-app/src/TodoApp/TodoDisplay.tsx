@@ -38,6 +38,7 @@ function TodoDisplay() {
     const newTodo = { input, date };
     setAddTodo([newTodo, ...addTodo]);
     console.log("add todo btn clicked");
+    // Write code to remove inputs
   }
   return (
     <Container className="d-flex flex-column align-items-center">

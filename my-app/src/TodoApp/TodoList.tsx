@@ -12,8 +12,13 @@ function TodoList({ addTodo }: TodoListProps) {
     <ListGroup>
       {addTodo.map((todo) => (
         <ListGroup.Item
+          className="d-flex justify-content-between"
+          style={{ width: "400px" }}
           key={`${todo.input} due ${todo.date}`}
-        >{`${todo.input} due ${todo.date}`}</ListGroup.Item>
+        >
+          {todo.input}
+          <span className="text-muted">due {todo.date}</span>
+        </ListGroup.Item>
       ))}
     </ListGroup>
   );
