@@ -6,12 +6,18 @@ import "./Homepage.css";
 function Homepage() {
   return (
     <Container
-      className="d-flex flex-column  align-items-center justify-content-center"
+      className="d-flex flex-column  align-items-center justify-content-center bg-gradient-primary"
       style={{ height: "100vh" }}
     >
-      <h1 className="mb-5">
+      {/* Have scrambled text revealing headings */}
+      <h1 className="mb-5 d-flex flex-column" style={{ fontSize: "3.5rem" }}>
         Typescript Projects
-        <small className="text-muted"> Styling with Bootstrap</small>
+        <span className="text-info" style={{ fontSize: "2.5rem" }}>
+          Styling with Bootstrap
+        </span>
+        <span className="text-muted " style={{ fontSize: "2rem" }}>
+          Testing with Cypress
+        </span>
       </h1>
       <Stack
         direction="horizontal"
