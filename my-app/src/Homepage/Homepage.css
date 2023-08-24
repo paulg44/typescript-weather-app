@@ -1,6 +1,12 @@
 /* Custom CSS for Homepage */
 
+.customHomepage {
+  max-width: 2000px;
+  background: linear-gradient(to bottom, #f4f4f4, #fff);
+}
+
 .customCard {
+  background-color: #f4f4f4;
   text-align: center;
   padding: 20px;
   width: 200px;

@@ -1,12 +1,15 @@
 // Component for Homepage
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Container, Stack, Card } from "react-bootstrap";
 import "./Homepage.css";
 
 function Homepage() {
+  // const [darkMode, setDarkMode] = useState(false);
+
   return (
     <Container
-      className="d-flex flex-column  align-items-center justify-content-center bg-gradient-primary"
+      className="customHomepage d-flex flex-column  align-items-center justify-content-center"
       style={{ height: "100vh" }}
     >
       {/* Have scrambled text revealing headings */}

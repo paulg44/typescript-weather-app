@@ -1,6 +1,6 @@
 // Weather App display component
 import { useState, ChangeEvent } from "react";
-import { Link } from "react-router-dom";
+import { Container } from "react-bootstrap";
 import CityCard from "./CityCard/CityCard";
 import SearchBar from "./SearchBar/SearchBar";
 import FavouriteCities from "./FavouriteCities/FavouriteCities";
@@ -48,8 +48,7 @@ function WeatherAppDisplay() {
     console.log("add to list btn clicked");
   }
   return (
-    <div className="weatherAppDisplay">
-      <Link to={"/"}>Home</Link>
+    <Container className="">
       <SearchBar
         handleInputChange={handleInputChange}
         handleSearchClick={handleSearchClick}
@@ -57,7 +56,7 @@ function WeatherAppDisplay() {
       <CityCard city={city} temp={temp} handleAddToList={handleAddToList} />
       <FavouriteCities addFavourite={addFavourite} />
       <BackButton />
-    </div>
+    </Container>
   );
 }
 
