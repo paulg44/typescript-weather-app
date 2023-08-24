@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import CityCard from "./CityCard/CityCard";
 import SearchBar from "./SearchBar/SearchBar";
 import FavouriteCities from "./FavouriteCities/FavouriteCities";
+import BackButton from "../BackButton/BackButton";
 
 export type CityData = {
   name: string;
@@ -55,6 +56,7 @@ function WeatherAppDisplay() {
       />
       <CityCard city={city} temp={temp} handleAddToList={handleAddToList} />
       <FavouriteCities addFavourite={addFavourite} />
+      <BackButton />
     </div>
   );
 }

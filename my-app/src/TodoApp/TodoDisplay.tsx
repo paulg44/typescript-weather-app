@@ -3,6 +3,7 @@ import { Container } from "react-bootstrap";
 import { useState, ChangeEvent, MouseEvent } from "react";
 import EnterNewTodo from "./EnterNewTodo";
 import TodoList from "./TodoList";
+import BackButton from "../BackButton/BackButton";
 
 export type EnterNewTodoProps = {
   handleTodoInputChange: (e: ChangeEvent<HTMLInputElement>) => void;
@@ -65,6 +66,8 @@ function TodoDisplay() {
         addTodo={addTodo}
         handleDeleteTodo={handleDeleteTodo}
       />
+
+      <BackButton />
     </Container>
   );
 }
