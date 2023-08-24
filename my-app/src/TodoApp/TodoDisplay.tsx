@@ -41,6 +41,12 @@ function TodoDisplay() {
     setDate("");
   }
 
+  //   Function to delete todo
+  function handleDeleteTodo(newTodo: any) {
+    const removeTodo = addTodo.filter((_, index) => index !== newTodo);
+    setAddTodo(removeTodo);
+  }
+
   return (
     <Container className="d-flex flex-column align-items-center">
       {/* Make Paul's dynamic? */}
@@ -53,7 +59,12 @@ function TodoDisplay() {
         date={date}
         addTodo={addTodo}
       />
-      <TodoList input={input} date={date} addTodo={addTodo} />
+      <TodoList
+        input={input}
+        date={date}
+        addTodo={addTodo}
+        handleDeleteTodo={handleDeleteTodo}
+      />
     </Container>
   );
 }
