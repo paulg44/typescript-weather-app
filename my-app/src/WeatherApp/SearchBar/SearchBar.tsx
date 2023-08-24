@@ -1,7 +1,7 @@
 // Component for Searchbar
 
 import { ChangeEvent } from "react";
-import { Form, Button } from "react-bootstrap";
+import { Container, Form, InputGroup, Button } from "react-bootstrap";
 
 type SearchBarProps = {
   handleInputChange: (e: ChangeEvent<HTMLInputElement>) => void;
@@ -10,12 +10,13 @@ type SearchBarProps = {
 
 function SearchBar({ handleInputChange, handleSearchClick }: SearchBarProps) {
   return (
-    <Form className="d-flex flex-column align-items-center mt-5">
-      <Form.Label>Enter City</Form.Label>
-      <Form.Control
-        style={{ width: "400px", borderRadius: "20px" }}
-        onChange={handleInputChange}
-      ></Form.Control>
+    <Container className="d-flex flex-column align-items-center mt-5">
+      <InputGroup style={{ width: "400px" }}>
+        <InputGroup.Text style={{ backgroundColor: "#333", color: "#fff" }}>
+          Enter City
+        </InputGroup.Text>
+        <Form.Control onChange={handleInputChange} />
+      </InputGroup>
       <Button
         className="mt-3"
         style={{ width: "150px", borderRadius: "20px" }}
@@ -23,7 +24,7 @@ function SearchBar({ handleInputChange, handleSearchClick }: SearchBarProps) {
       >
         Search
       </Button>
-    </Form>
+    </Container>
   );
 }
 
