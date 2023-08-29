@@ -18,7 +18,7 @@ function SearchBar({ handleInputChange, handleSearchClick }: SearchBarProps) {
         <Form.Control onChange={handleInputChange} />
       </InputGroup>
       <Button
-        className="mt-3"
+        className="mt-3 shadow"
         style={{ width: "150px", borderRadius: "20px" }}
         onClick={handleSearchClick}
       >

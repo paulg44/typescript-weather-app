@@ -1,6 +1,6 @@
 // Weather App display component
 import { useState, ChangeEvent } from "react";
-import { Container, Stack } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import CityCard from "./CityCard/CityCard";
 import SearchBar from "./SearchBar/SearchBar";
 import FavouriteCities from "./FavouriteCities/FavouriteCities";
@@ -15,6 +15,7 @@ function WeatherAppDisplay() {
   const [search, setSearch] = useState("");
   const [city, setCity] = useState("");
   const [temp, setTemp] = useState(0);
+  const [conditionText, setConditionText] = useState("");
   const [addFavourite, setAddFavourite] = useState<CityData[]>([]);
 
   // API for weather
@@ -27,6 +28,7 @@ function WeatherAppDisplay() {
     console.log(data);
     setCity(data.location.name);
     setTemp(data.current.temp_c);
+    setConditionText(data.current.condition.text);
   }
 
   // Function for input change
@@ -49,12 +51,17 @@ function WeatherAppDisplay() {
   }
   return (
     <Container className="d-flex" style={{ height: "100vh" }}>
-      <Container className="d-flex flex-column justify-content-center">
+      <Container className="d-flex flex-column justify-content-start">
         <SearchBar
           handleInputChange={handleInputChange}
           handleSearchClick={handleSearchClick}
         />
-        <CityCard city={city} temp={temp} handleAddToList={handleAddToList} />
+        <CityCard
+          city={city}
+          temp={temp}
+          conditionText={conditionText}
+          handleAddToList={handleAddToList}
+        />
       </Container>
       <FavouriteCities addFavourite={addFavourite} />
       <BackButton />

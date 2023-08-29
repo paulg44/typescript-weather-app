@@ -4,15 +4,27 @@ import { Container, Button } from "react-bootstrap";
 type CityCardProps = {
   city: string;
   temp: number;
+  conditionText: string;
   handleAddToList: () => void;
 };
 
-function CityCard({ city, temp, handleAddToList }: CityCardProps) {
+function CityCard({
+  city,
+  temp,
+  conditionText,
+  handleAddToList,
+}: CityCardProps) {
   return (
-    <Container>
+    <Container className="mt-5">
       <h2 className="display-1">{city}</h2>
       <p className="display-6">{temp}C</p>
-      <Button variant="outline-success" onClick={handleAddToList}>
+      <p>{conditionText}</p>
+      <Button
+        variant="outline-success"
+        className="shadow"
+        style={{ borderRadius: "20px", width: "200px" }}
+        onClick={handleAddToList}
+      >
         Add to List
       </Button>
     </Container>
