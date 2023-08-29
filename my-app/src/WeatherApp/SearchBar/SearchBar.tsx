@@ -10,7 +10,7 @@ type SearchBarProps = {
 
 function SearchBar({ handleInputChange, handleSearchClick }: SearchBarProps) {
   return (
-    <Container className="d-flex flex-column align-items-center mt-5">
+    <Container className="mt-5">
       <InputGroup style={{ width: "400px" }}>
         <InputGroup.Text style={{ backgroundColor: "#333", color: "#fff" }}>
           Enter City

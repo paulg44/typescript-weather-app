@@ -1,4 +1,5 @@
 // Component for searched city result
+import { Container, Button } from "react-bootstrap";
 
 type CityCardProps = {
   city: string;
@@ -8,11 +9,13 @@ type CityCardProps = {
 
 function CityCard({ city, temp, handleAddToList }: CityCardProps) {
   return (
-    <div>
-      <h2>{city}</h2>
-      <p>{temp}</p>
-      <button onClick={handleAddToList}>Add to List</button>
-    </div>
+    <Container>
+      <h2 className="display-1">{city}</h2>
+      <p className="display-6">{temp}C</p>
+      <Button variant="outline-success" onClick={handleAddToList}>
+        Add to List
+      </Button>
+    </Container>
   );
 }
 

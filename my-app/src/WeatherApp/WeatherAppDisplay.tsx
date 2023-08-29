@@ -1,6 +1,6 @@
 // Weather App display component
 import { useState, ChangeEvent } from "react";
-import { Container } from "react-bootstrap";
+import { Container, Stack } from "react-bootstrap";
 import CityCard from "./CityCard/CityCard";
 import SearchBar from "./SearchBar/SearchBar";
 import FavouriteCities from "./FavouriteCities/FavouriteCities";
@@ -48,12 +48,14 @@ function WeatherAppDisplay() {
     console.log("add to list btn clicked");
   }
   return (
-    <Container className="">
-      <SearchBar
-        handleInputChange={handleInputChange}
-        handleSearchClick={handleSearchClick}
-      />
-      <CityCard city={city} temp={temp} handleAddToList={handleAddToList} />
+    <Container className="d-flex" style={{ height: "100vh" }}>
+      <Container className="d-flex flex-column justify-content-center">
+        <SearchBar
+          handleInputChange={handleInputChange}
+          handleSearchClick={handleSearchClick}
+        />
+        <CityCard city={city} temp={temp} handleAddToList={handleAddToList} />
+      </Container>
       <FavouriteCities addFavourite={addFavourite} />
       <BackButton />
     </Container>
