@@ -3,6 +3,7 @@ import { Container, Button } from "react-bootstrap";
 
 type CityCardProps = {
   city: string;
+  country: string;
   temp: number;
   conditionText: string;
   handleAddToList: () => void;
@@ -10,13 +11,16 @@ type CityCardProps = {
 
 function CityCard({
   city,
+  country,
   temp,
   conditionText,
   handleAddToList,
 }: CityCardProps) {
   return (
     <Container className="mt-5">
-      <h2 className="display-1">{city}</h2>
+      <h2 className="display-3">
+        {city} {country}
+      </h2>
       <p className="display-6">{temp}C</p>
       <p>{conditionText}</p>
       <Button

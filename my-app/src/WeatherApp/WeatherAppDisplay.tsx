@@ -14,6 +14,7 @@ function WeatherAppDisplay() {
   // Use States
   const [search, setSearch] = useState("");
   const [city, setCity] = useState("");
+  const [country, setCountry] = useState("");
   const [temp, setTemp] = useState(0);
   const [conditionText, setConditionText] = useState("");
   const [addFavourite, setAddFavourite] = useState<CityData[]>([]);
@@ -27,6 +28,7 @@ function WeatherAppDisplay() {
     const data = await response.json();
     console.log(data);
     setCity(data.location.name);
+    setCountry(data.location.country);
     setTemp(data.current.temp_c);
     setConditionText(data.current.condition.text);
   }
@@ -58,12 +60,15 @@ function WeatherAppDisplay() {
         />
         <CityCard
           city={city}
+          country={country}
           temp={temp}
           conditionText={conditionText}
           handleAddToList={handleAddToList}
         />
       </Container>
-      <FavouriteCities addFavourite={addFavourite} />
+      <Container className="d-flex align-items-center justify-content-center">
+        <FavouriteCities addFavourite={addFavourite} />
+      </Container>
       <BackButton />
     </Container>
   );

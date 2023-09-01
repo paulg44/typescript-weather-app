@@ -1,6 +1,6 @@
 // Component for favourite cities list
 import { CityData } from "../WeatherAppDisplay";
-import "./FavouriteCities.css";
+import { Container, ListGroup } from "react-bootstrap";
 
 type FavouriteCitiesProps = {
   addFavourite: CityData[];
@@ -8,13 +8,16 @@ type FavouriteCitiesProps = {
 
 function FavouriteCities({ addFavourite }: FavouriteCitiesProps) {
   return (
-    <div className="favouriteCities">
-      <ul>
+    <Container className="d-flex flex-column justify-content-center">
+      <h3>Saved Cities</h3>
+      <ListGroup numbered>
         {addFavourite.map((city: CityData) => (
-          <li key={city.name}>{city.name}</li>
+          <ListGroup.Item action variant="info" key={city.name}>
+            {city.name}
+          </ListGroup.Item>
         ))}
-      </ul>
-    </div>
+      </ListGroup>
+    </Container>
   );
 }
 
