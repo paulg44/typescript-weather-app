@@ -16,6 +16,7 @@ function WeatherAppDisplay() {
   const [city, setCity] = useState("");
   const [country, setCountry] = useState("");
   const [temp, setTemp] = useState(0);
+  const [weatherIcon, setWeatherIcon] = useState("");
   const [conditionText, setConditionText] = useState("");
   const [addFavourite, setAddFavourite] = useState<CityData[]>([]);
 
@@ -30,6 +31,7 @@ function WeatherAppDisplay() {
     setCity(data.location.name);
     setCountry(data.location.country);
     setTemp(data.current.temp_c);
+    setWeatherIcon(data.current.condition.icon);
     setConditionText(data.current.condition.text);
   }
 
@@ -62,6 +64,7 @@ function WeatherAppDisplay() {
           city={city}
           country={country}
           temp={temp}
+          weatherIcon={weatherIcon}
           conditionText={conditionText}
           handleAddToList={handleAddToList}
         />

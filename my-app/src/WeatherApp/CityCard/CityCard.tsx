@@ -5,6 +5,7 @@ type CityCardProps = {
   city: string;
   country: string;
   temp: number;
+  weatherIcon: string;
   conditionText: string;
   handleAddToList: () => void;
 };
@@ -13,6 +14,7 @@ function CityCard({
   city,
   country,
   temp,
+  weatherIcon,
   conditionText,
   handleAddToList,
 }: CityCardProps) {
@@ -22,6 +24,7 @@ function CityCard({
         {city} {country}
       </h2>
       <p className="display-6">{temp}C</p>
+      <img src={weatherIcon} alt="" />
       <p>{conditionText}</p>
       <Button
         variant="outline-success"
