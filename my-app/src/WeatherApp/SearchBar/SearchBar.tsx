@@ -3,7 +3,7 @@
 import { ChangeEvent } from "react";
 import { Container, Form, InputGroup, Button } from "react-bootstrap";
 
-type SearchBarProps = {
+export type SearchBarProps = {
   handleInputChange: (e: ChangeEvent<HTMLInputElement>) => void;
   handleSearchClick: () => void;
 };

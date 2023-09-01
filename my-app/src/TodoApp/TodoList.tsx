@@ -14,13 +14,17 @@ function TodoList({ addTodo, handleDeleteTodo }: TodoListProps) {
     <ListGroup>
       {addTodo.map((todo, index) => (
         <ListGroup.Item
-          className="d-flex justify-content-between"
+          className="d-flex justify-content-between text-center"
           style={{ width: "400px" }}
           key={`${todo.input} ${todo.date}`}
         >
           {todo.input}
           <span className="text-muted">due {todo.date}</span>
-          <Button variant="danger" onClick={() => handleDeleteTodo(index)}>
+          <Button
+            variant="danger"
+            onClick={() => handleDeleteTodo(index)}
+            style={{ borderRadius: "20px" }}
+          >
             Delete
           </Button>
         </ListGroup.Item>
