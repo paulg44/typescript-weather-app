@@ -1,7 +1,7 @@
 // Component for searched city result
 import { Container, Button } from "react-bootstrap";
 
-type CityCardProps = {
+export type CityCardProps = {
   city: string;
   country: string;
   temp: number;
@@ -19,7 +19,7 @@ function CityCard({
   handleAddToList,
 }: CityCardProps) {
   return (
-    <Container className="mt-5">
+    <Container data-testid="cityCard" className="mt-5">
       <h2 className="display-3">
         {city} {country}
       </h2>

@@ -2,13 +2,16 @@
 import { CityData } from "../WeatherAppDisplay";
 import { Container, ListGroup } from "react-bootstrap";
 
-type FavouriteCitiesProps = {
+export type FavouriteCitiesProps = {
   addFavourite: CityData[];
 };
 
 function FavouriteCities({ addFavourite }: FavouriteCitiesProps) {
   return (
-    <Container className="d-flex flex-column justify-content-center">
+    <Container
+      data-testid="cityList"
+      className="d-flex flex-column justify-content-center"
+    >
       <h3>Saved Cities</h3>
       <ListGroup numbered>
         {addFavourite.map((city: CityData) => (
