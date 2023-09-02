@@ -1,4 +1,4 @@
-import { screen, render } from "@testing-library/react";
+import { screen, render, fireEvent } from "@testing-library/react";
 import SearchBar, { SearchBarProps } from "./SearchBar";
 
 // Mock Functions
@@ -16,4 +16,14 @@ test("searchbar button renders", () => {
   render(<SearchBar {...searchBarProps} />);
   const searchBar = screen.getByRole("button", { name: "Search" });
   expect(searchBar).toBeInTheDocument();
+});
+
+// Test can enter a word into searchbar
+test("can enter into searchbar input", () => {
+  render(<SearchBar {...searchBarProps} />);
+  const searchInput = screen.getByRole("textbox");
+  expect(searchInput).toBeInTheDocument();
+
+  fireEvent.input(searchInput, { target: { value: "derby" } });
+  expect(searchInput).toHaveValue("derby");
 });
