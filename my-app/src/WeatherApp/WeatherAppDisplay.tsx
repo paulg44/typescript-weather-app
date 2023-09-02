@@ -54,7 +54,11 @@ function WeatherAppDisplay() {
     console.log("add to list btn clicked");
   }
   return (
-    <Container className="d-flex" style={{ height: "100vh" }}>
+    <Container
+      data-testid="page"
+      className="d-flex"
+      style={{ height: "100vh" }}
+    >
       <Container className="d-flex flex-column justify-content-start">
         <SearchBar
           handleInputChange={handleInputChange}
