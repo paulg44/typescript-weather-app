@@ -25,4 +25,4 @@ For this project along with typescript I am also using bootstrap for the CSS. Th
 
 So now this project is finished I believe I have mainly learnt a lot about bootstrap, I've always personnaly liked custom CSS, but can really see the benifit of using something like bootstrap, it was quite fun and easy to use out the box. On the typescript side I've certainly learnt more about the props types, that's pretty much cemented now and new things like useContext makes it so I dont have to pass props down all the time, I believe its called drilling. All in all a great tutorial.
 
-Test
+Test 2
