@@ -1,6 +1,6 @@
 // Component to for list items to render
 import { ListGroup, Button } from "react-bootstrap";
-import { MouseEvent } from "react";
+// import { MouseEvent } from "react";
 
 type TodoListProps = {
   handleDeleteTodo: (index: number) => void;
